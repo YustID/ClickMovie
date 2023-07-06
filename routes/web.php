@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [MovieController::class, 'getData'])->name('movie');
+Route::get('details', [MovieController::class, 'getDetails'])->name('details');

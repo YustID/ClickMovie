@@ -97,7 +97,7 @@
     <div class="bg-black py-8 lg:mt-10">
       <div class=" lg:px-20 flex justify-between lg:mt-8 mt-10 px-10">
         <h1 class="font-bold font-mono text-xl text-white">Coming Soon</h1>
-        <button class="border-2 rounded-full border-solid border-white text-lg px-4 text-white">See All</button>
+        <a href="{{ url('details') }}" class="border-2 rounded-full border-solid border-white text-lg px-4 text-white hover:border-red-400 hover:text-black hover:bg-white">See All</a>
       </div>
       <div class="swiper mySwiper   ">
         <div class="swiper-wrapper">
@@ -114,21 +114,21 @@
       <div class="lg:mt-8 mt-10 px-10">
         <h1 class="font-bold font-mono text-xl text-white"><span>|</span>Featured</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:mt-8 mt-10 py-4 ">
-          @foreach($mivoe as $i)
+          @foreach($mivoe as $item2)
           <div class="max-w-sm bg-white rounded-lg flex justify-center">
             <div class="p-5">
               <a href="#">
-                <img class="rounded-lg object-cover w-46 h-46" src="https://image.tmdb.org/t/p/w500{{ $i['poster_path'] }}" alt="Gambar">
+                <img class="rounded-lg object-cover w-46 h-46" src="https://image.tmdb.org/t/p/w500{{ $item2['poster_path'] }}" alt="Gambar">
               </a>
             </div>
             <div class="p-5">
               <div>
                 <a href="#">
-                  <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $i['original_title'] }}</h5>
+                  <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $item2['original_title'] }}</h5>
                 </a>
                 <div class="flex justify-start space-x-2">
-                  <p class="font-bold text-base italic">{{ $i['vote_average'] }}</p>
-                  <p class="font-semibold underline underline-offset-4">{{ $i['popularity'] }}</p>
+                  <p class="font-bold text-base italic">{{ $item2['vote_average'] }}</p>
+                  <p class="font-semibold underline underline-offset-4">{{ $item2['popularity'] }}</p>
                 </div>
               </div>
               <div class="mt-2">
@@ -142,9 +142,42 @@
       </div>
       </div>
     </div>
-    
-      
     {{-- End Cards --}}
+
+    {{-- Start Cards2 --}}
+    <div class="py-4 bg-black">
+      <div class="lg:mt-8 mt-10 px-10">
+        <h1 class="font-bold font-mono text-xl text-white"><span>|</span>Popular</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:mt-8 mt-10 py-4 ">
+          @foreach($movie as $item3)
+          <div class="max-w-sm bg-white rounded-lg flex justify-center">
+            <div class="p-5">
+              <a href="#">
+                <img class="rounded-lg object-cover w-46 h-46" src="https://image.tmdb.org/t/p/w500{{ $item3['poster_path'] }}" alt="Gambar">
+              </a>
+            </div>
+            <div class="p-5">
+              <div>
+                <a href="#">
+                  <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $item3['original_title'] }}</h5>
+                </a>
+                <div class="flex justify-start space-x-2">
+                  <p class="font-bold text-base italic">{{ $item3['vote_average'] }}</p>
+                  <p class="font-semibold underline underline-offset-4">{{ $item3['popularity'] }}</p>
+                </div>
+              </div>
+              <div class="mt-2">
+                <a href="" id="readMoreButton" class="font-semibold hover:text-blue-500">
+                  Read more...
+                </a>
+              </div>
+            </div>
+          </div>
+          @endforeach
+      </div>
+      </div>
+    </div>
+    {{-- End Cards2 --}}
     
 
     {{--  --}}
