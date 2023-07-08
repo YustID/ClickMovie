@@ -39,7 +39,7 @@
       </div>
       <div class="hidden bg-[#2B2A2F] fixed z-0 right-0 left-0 mt-5" id="myLinks">
         <ul>
-          <a href="#about"><li class="ml-2 py-2 text-white hover:bg-orange-500">Genre</li></a>
+          <a href="{{ url('genre') }}"><li class="ml-2 py-2 text-white hover:bg-orange-500">Genre</li></a>
           <a href="#home"><li class="ml-2 py-2 text-white hover:bg-orange-500">Year</li></a>
         </ul>
       </div>
@@ -55,8 +55,8 @@
       {{-- Start Topbar --}}
       <nav class="lg:flex hidden">
         <ul class="flex">
-          <li class="ml-2 text-white hover:text-orange-500"><a href="#home">Genre</a></li>
-          <li class="ml-2 text-white hover:text-orange-500"><a href="#about">Year</a></li>
+          <li class="ml-2 text-white hover:text-orange-500"><a href="{{ url('genre') }}">Genre</a></li>
+          <li class="ml-2 text-white hover:text-orange-500"><a href="{{ url('tvlist') }}">Tv List</a></li>
         </ul>
       </nav>
       {{-- End Topbar --}}

@@ -101,43 +101,18 @@
       {{-- Top --}}
       <div class=" flex items-center justify-center mt-32">
         <hr class="w-[1200px] border-gray-300 border-4 rounded-lg">
-        <p class="absolute bg-black px-4 text-gray-500 text-xl"><span class="text-red-600 font-mono">Click</span> Movie</p>
+        <p class="absolute bg-black px-4 text-xl font-bold text-white">Genre</p>
       </div>
 
-      {{-- Start Cards2 --}}
-    <div class="py-4 bg-black mt-10">
-        <div class="lg:mt-8 mt-10 px-10">
-          <h1 class="font-bold font-mono text-xl text-white"><span>|</span>Cooming Soon</h1>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:mt-8 mt-10 py-4 ">
-            @foreach($details as $itam)
-            <div class="max-w-sm bg-white rounded-lg flex justify-center">
-              <div class="p-5">
-                <a href="#">
-                  <img class="rounded-lg object-cover w-46 h-46" src="https://image.tmdb.org/t/p/w500{{ $itam['poster_path'] }}" alt="Gambar">
-                </a>
-              </div>
-              <div class="p-5">
-                <div>
-                  <a href="#">
-                    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $itam['original_title'] }}</h5>
-                  </a>
-                  <div class="flex justify-start space-x-2">
-                    <p class="font-bold text-base italic">{{ $itam['vote_average'] }}</p>
-                    <p class="font-semibold underline underline-offset-4">{{ $itam['popularity'] }}</p>
-                  </div>
-                </div>
-                <div class="mt-2">
-                  <a href="" id="readMoreButton" class="font-semibold hover:text-blue-500">
-                    Read more...
-                  </a>
-                </div>
-              </div>
-            </div>
-            @endforeach
-        </div>
-        </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        @foreach($genre as $i)
+          <div class="mt-20 text-center">
+              <a href="{{ 'genre/' . $i['id'] . '/movies' }}" class="border-2 rounded-full border-solid border-white text-lg px-5 py-1 text-white hover:border-red-400 hover:text-black hover:bg-white">{{ $i['name'] }}</a>
+          </div>
+        @endforeach
       </div>
-      {{-- End Cards2 --}}
+
+      
 
           {{--Start Script Humberger --}}
     <script>

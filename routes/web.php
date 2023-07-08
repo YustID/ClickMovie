@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MovieController::class, 'getData'])->name('movie');
 Route::get('details', [MovieController::class, 'getDetails'])->name('details');
+Route::get('genre', [MovieController::class, 'getGenre'])->name('genre');
+Route::get('tvlist', [MovieController::class, 'getTvlist'])->name('tvlist');
+Route::get('/genre/{genreId}/movies', [MovieController::class, 'getMovieGenre'])->name('genre.movies');
+Route::get('/genre/{tvlistId}/tvlist', [MovieController::class, 'getDetailTvlist'])->name('genre.tvlist');
